@@ -46,8 +46,9 @@ all: protoc build ## Generate protocol buffer code and compile
 dep: ## Get the dependencies
 	@go mod download
 
-lint: ## Lint Golang files
+lint: ## Lint Golang and shell files
 	@golangci-lint run
+	@find . -name "*.sh" | xargs shellcheck
 
 test: ## Run unittests
 	@go test -short ${PKG_LIST} | grep -v 'no test files'
