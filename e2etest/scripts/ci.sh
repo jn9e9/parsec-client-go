@@ -28,6 +28,7 @@ cleanup () {
    echo "clean up completed"
 }
 
+
 usage () {
     printf "
 Continuous Integration test script
